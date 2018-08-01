@@ -1,5 +1,5 @@
-import React from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
-import PropTypes from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const emptyState = {
   username: '',
@@ -69,3 +69,4 @@ AuthForm.propTypes = {
   onComplete: PropTypes.func,
   type: PropTypes.string,
 };
+//.
