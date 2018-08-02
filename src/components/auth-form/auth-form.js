@@ -69,3 +69,5 @@ AuthForm.propTypes = {
   onComplete: PropTypes.func,
   type: PropTypes.string,
 };
+
+// ..
