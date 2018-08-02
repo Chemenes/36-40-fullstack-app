@@ -1,4 +1,4 @@
-import React from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
+import React from 'react';
 
 // For today, this will just be a simple component that we will use to determine that we got past authentication/authorization
 

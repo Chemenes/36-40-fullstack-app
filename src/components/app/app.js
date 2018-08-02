@@ -1,5 +1,5 @@
-import React from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
-import { BrowserRouter, Route } from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom';
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import Landing from '../landing/landing';
 import Dashboard from '../dashboard/dashboard';
