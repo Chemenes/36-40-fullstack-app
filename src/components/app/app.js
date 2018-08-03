@@ -1,9 +1,14 @@
-import React from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
-import { BrowserRouter, Route } from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom';
+
+import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import Landing from '../landing/landing';
 import Dashboard from '../dashboard/dashboard';
 import AuthRedirect from '../auth-redirect/auth-redirect';
+import Profile from '../profile/profile';
+import Navbar from '../navbar/navbar';
+import "./app.scss";
+
 
 
 export default class App extends React.Component {
@@ -12,14 +17,19 @@ export default class App extends React.Component {
       <div className="app">
         <BrowserRouter>
           <div>
+            {/* <ProfileForm /> */}
+            <Navbar />
             <Route exact path="*" component={AuthRedirect} />
             <Route exact path="/" component={Landing} />
             <Route exact path="/signup" component={Landing} />
             <Route exact path="/login" component={Landing} />
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/profiles" component={Profile} />
           </div>
         </BrowserRouter>
       </div>
     );
   }
 }
+
+
