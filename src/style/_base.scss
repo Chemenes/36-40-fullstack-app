@@ -13,7 +13,7 @@ em { font-style: italic; }
 strong { font-weight: bold; }
 
 body {
-  background: $color-darkcyan;
+  background: $color-purple;
   font-size: 16px;
 }
 
@@ -79,8 +79,8 @@ button,input[type="submit"] {
 
 footer {
   height: 40px;
-  background: #000;
-  border-top: solid 5px #fff;
+  background: rgb(230, 211, 7);
+  border-top: solid 5px rgba(34, 20, 196, 0.324);
   margin-top: 100px;
 }
 
