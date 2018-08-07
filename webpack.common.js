@@ -1,10 +1,9 @@
-
 'use strict';
 
-require('../../../Library/Caches/typescript/2.9/node_modules/@types/dotenv').config();
+require('dotenv').config();
 
-const { DefinePlugin } = require('../../../Library/Caches/typescript/2.9/node_modules/@types/webpack');
-const HtmlWebpackPlugin = require('../../../Library/Caches/typescript/2.9/node_modules/@types/html-webpack-plugin');
+const { DefinePlugin } = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const webpackConfig = module.exports = {};
 
@@ -18,7 +17,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: '36 Async Actions',
+    title: 'Lecture 37 Cookies',
   }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),

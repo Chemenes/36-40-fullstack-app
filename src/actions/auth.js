@@ -1,5 +1,8 @@
 import superagent from 'superagent';
 import * as routes from '../lib/routes';
+import { cookieDelete } from '../lib/utils';
+
+const TOKEN_COOKIE_KEY = 'X-Pizza-Token';
 
 // These are sync action creators
 
@@ -12,6 +15,13 @@ export const setToken = token => ({
 export const removeToken = () => ({
   type: 'TOKEN_REMOVE',
 });
+
+export const logout = () => {
+  // 1. Delete the cookie from the browser
+  // 2. Dispatch the "TOKEN_REMOVE" action to the Redux store
+  cookieDelete(TOKEN_COOKIE_KEY);
+  return removeToken();
+};
 
 // These are async action creators
 
@@ -41,4 +51,3 @@ export const userLogin = user => (store) => {
       return store.dispatch(setToken(response.body.token));
     });
 };
-//go

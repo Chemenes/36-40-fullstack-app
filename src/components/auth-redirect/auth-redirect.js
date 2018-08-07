@@ -1,10 +1,10 @@
 // We are using this component to redirect any miscellaneous pathnames (i.e. "/foobar") to an appropriate component view instead of going to a blank page (which is the default action if we do not account for it)
-
-import React from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
-import { connect } from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-redux';
-import PropTypes from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/prop-types';
-import { Redirect } from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom';
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import * as routes from '../../lib/routes';
+
 
 const mapStateToProps = state => ({
   token: state.token,
