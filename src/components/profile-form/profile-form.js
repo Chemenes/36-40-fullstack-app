@@ -5,6 +5,7 @@ const emptyState = {
   bio: '',
   firstName: '',
   lastName: '',
+  location: '',
 };
 
 export default class ProfileForm extends React.Component {

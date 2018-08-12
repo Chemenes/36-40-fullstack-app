@@ -23,26 +23,15 @@ export const logout = () => {
   return removeToken();
 };
 
-// These are async action creators
-
 export const userSignup = user => (store) => {
-  /*
-    {
-      username: 
-      email: 
-      password
-    }
-  */
   return superagent.post(`${API_URL}${routes.SIGNUP_ROUTE}`)
     .send(user)
-    .withCredentials() // The .withCredentials() method enables the ability to send cookies from the origin
+    .withCredentials()
     .then((response) => {
-      // return store.dispatch({ type: 'SET_TOKEN, payload: response.body.token })
       return store.dispatch(setToken(response.body.token));
     });
 };
 
-// userLogin(user)(store)
 export const userLogin = user => (store) => {
   return superagent.get(`${API_URL}${routes.LOGIN_ROUTE}`)
     .auth(user.username, user.password)
@@ -51,3 +40,4 @@ export const userLogin = user => (store) => {
       return store.dispatch(setToken(response.body.token));
     });
 };
+
