@@ -25,7 +25,7 @@ export const createProfileRequest = profile => (store) => {
 export const updateProfileRequest = profile => (store) => {
   const { token } = store.getState();
 
-  return superagent.put(`${API_URL}${routes.PROFILE_ROUTE}/${profile._id}`)
+  return superagent.put(`${API_URL}${routes.PROFILE_ROUTE}/${profile._id}`) 
     .set('Authorization', `Bearer ${token}`)
     .set('Content-Type', 'application/json')
     .send(profile)
@@ -42,4 +42,4 @@ export const fetchProfileRequest = () => (store) => {
     .then((response) => {
       return store.dispatch(setProfile(response.body));
     });
-};
+};       
