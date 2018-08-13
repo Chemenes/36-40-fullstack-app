@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import * as authActions from '../../actions/auth';
 import * as routes from '../../lib/routes';
 // import googleBtn from '../../assets/google-btn-light.png';
+// import googleBtn from '../../asset/google-btn-light.png';
 // import './navbar.scss';
 
 const mapStateToProps = state => ({
@@ -17,6 +18,9 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class Navbar extends React.Component {
+  constructor(props){
+    super(props)
+  }
   setGoogleOauthUrl = () => {
     const baseUrl = 'https://accounts.google.com/o/oauth2/v2/auth?';
     const redirect = `redirect_uri=${API_URL}/oauth/google`;
@@ -30,12 +34,19 @@ class Navbar extends React.Component {
 
 
   renderJSX = (loggedIn) => {
+    const baseUrl = 'https://accounts.google.com/o/oauth2/v2/auth?';
+    const redirect = `redirect_uri=${API_URL}/oauth/google`;
+    const scope = '&scope=openid%20email%20profile';
+    const clientId = `&client_id=${GOOGLE_OAUTH_ID.trim()}`;
+    const prompt = '&prompt=consent%20select_account';
+    const responseType = '&response_type=code';
+    const testURL = `${baseUrl}${redirect}${scope}${clientId}${prompt}${responseType}`;
     const JSXNotLoggedIn = // eslint-disable-line
       <ul>
         <li><Link to={routes.ROOT_ROUTE}>Home</Link></li>
         <li><Link to={routes.LOGIN_ROUTE}>Login</Link></li>
         <li><Link to={routes.SIGNUP_ROUTE}>Sign up</Link></li>
-        {/* <li><a href={this.setGoogleOAuthUrl()}><img src={googleBtn} /></a></li> */}
+        <li><a href={testURL}>click me</a></li>
       </ul>;
 
     const JSXLoggedIn = //eslint-disable-line
