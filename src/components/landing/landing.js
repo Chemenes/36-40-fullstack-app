@@ -1,7 +1,8 @@
-import React from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
-import { Link } from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom';
-import { connect } from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-redux';
-import PropTypes from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/prop-types';
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import AuthForm from '../auth-form/auth-form';
 import * as authActions from '../../actions/auth';
@@ -62,8 +63,8 @@ class Landing extends React.Component {
         <Link to="/signup"> signup </Link>
       </div>;
     switch (pathname) {
-      case routes.ROOT_ROUTE:
-        return rootJSX;
+      // case routes.ROOT_ROUTE:
+      //   return rootJSX;
       case routes.SIGNUP_ROUTE:
         return signUpJSX;
       case routes.LOGIN_ROUTE:
